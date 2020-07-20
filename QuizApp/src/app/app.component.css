@@ -1,0 +1,27 @@
+.que-heading{
+background-color: rgb(70, 67, 67);
+color: white;
+}
+
+select, option {
+    width: 150px;
+}
+
+option {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+h1 {
+    
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+
+}
+.btn{
+    width: 230px;
+    margin: -15px -30px 7px 50px;
+
+}

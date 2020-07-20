@@ -1,0 +1,49 @@
+<h1 class="text-align: center;">Cricket Trivia</h1>
+<div class="container">
+  <form  id="myForm" (ngSubmit)="showscore(f)" #f="ngForm">   
+  <div class="row">
+    
+      <div class="col-md-6"> 
+        <span  style="color: red;"*ngIf="errormsg"><strong>*Please Answer All the Questions..</strong> </span> 
+          <div class="panel-group" *ngFor="let que of getquestion">
+            <div class="panel panel-default">
+              <div class="panel-heading que-heading">{{que.questionId}}. {{que.questionText}}</div>
+              <div class="panel-body">
+                <div class="form-group" #questions>
+                  
+                  <select class="form-control" id="sel1" (change)="onSelect(que.questionId,product.value);" #product  >
+                    <option>Select answer..</option>
+                    <option *ngFor="let option of que.options" > {{option.optionText}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+      
+        
+      
+
+    </div>
+    <div [hidden]="errormsg">
+      <div class="col-md-6" [hidden]="!showchart">
+      
+        <app-bar-chart [data]="chartData"></app-bar-chart>
+      
+    </div> 
+    </div>
+    
+  </div>
+  <div class="row ">
+    
+      <button class="btn btn-default text-align: center;"type="submit" >Submit</button>&nbsp;
+    <button class="btn btn-default text-align: center; " type="button" (click)="myFunction()">Clear</button>
+  
+  </div>
+  
+  </form>
+</div>
+
+
+
+
